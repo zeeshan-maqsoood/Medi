@@ -1,38 +1,143 @@
-.App {
-  text-align: center;
+.ticker-wrap {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100vW!important;
+}
+.news-update{
+  border-top-width: 8px!important;
+  border-bottom-width: 2px!important;
+  border-color: "#5D5CAC";
+}
+.ticker-move {
+  display: flex;
+  animation: ticker 20s linear infinite;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ticker-item {
+  white-space: nowrap;
+  padding:  2rem;
+  font-size: 1rem;
+  color: #1f2937;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
+.news-ticker-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #5D5CAC;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.news-update-container {
+  background-color: #5D5CAC;
+  min-width: 0px;
+}
+
+.ticker-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  background-color: white;
+  overflow: hidden;
+}
+
+.ticker-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.ticker-move {
+  display: flex;
+}
+
+.ticker-item {
+  padding: 0 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .news-ticker-container {
+    flex-direction: column-reverse;
+  }
+  
+  .news-update-container {
+    border-top: none;
+    border-bottom: 8px solid #5D5CAC;
+  }
+}
+/* General sidebar styles */
+.sidebar-container {
   display: flex;
   flex-direction: column;
+  width: 16rem;
+  background-color: #2d3748;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  height: 4rem;
+  background-color: #1a202c;
 }
 
-.App-link {
-  color: #61dafb;
+.sidebar-nav {
+  flex: 1;
+  padding: 1rem 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.sidebar-menu-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  color: #e2e8f0;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-menu-item:hover {
+  background-color: #4a5568;
+}
+
+.sidebar-submenu {
+  padding-left: 1rem;
+}
+
+.sidebar-submenu-item {
+  display: block;
+  padding: 0.25rem 1rem;
+  color: #e2e8f0;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-submenu-item:hover {
+  background-color: #4a5568;
+}
+
+/* Small screen styles */
+@media (max-width: 640px) {
+  .sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    z-index: 1000;
   }
-  to {
-    transform: rotate(360deg);
+
+  .sidebar-open {
+    transform: translateX(0);
   }
 }
