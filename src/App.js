@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
-import { AppProvider } from './contextApi/useContext';
+import React, { useState } from "react";
+import { AppProvider } from "./contextApi/useContext";
 
-import Dashboard from "./Pages/dashboard"
+import Dashboard from "./Pages/dashboard";
 const App = () => {
- 
-
   return (
     <>
-    <AppProvider>
- <Dashboard/>
- </AppProvider>
-
+      <AppProvider>
+        <Dashboard />
+      </AppProvider>
     </>
   );
 };

@@ -77,7 +77,7 @@ const Dashboard = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
- 
+
   const newsItems = [
     "      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos nihil maxime aliquam voluptates, iste molestiae quidem minus perferendis aliquid, inventore sint facere excepturi eum illum. Cum explicabo quas itaque? Reiciendis?",
   ];
